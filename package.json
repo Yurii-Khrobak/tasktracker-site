@@ -1,0 +1,16 @@
+{
+	"name": "tasktracker-html",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"homepage": "https://Yurii-Khrobak.github.io/tasktracker-site/",
+	"scripts": {
+		"deploy": "gh-pages -d src"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"gh-pages": "^4.0.0"
+	}
+}
