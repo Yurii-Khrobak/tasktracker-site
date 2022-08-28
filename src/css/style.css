@@ -18,6 +18,10 @@ img {
 	display: block;
 }
 
+.no-scroll {
+	overflow-y: hidden;
+}
+
 .main-page {
 	display: flex;
 	flex-direction: column;
@@ -27,17 +31,17 @@ img {
 /* Header */
 
 .header {
-	display: flex;
-	align-items: center;
 	height: 73px;
 	border-bottom: 1px solid #e5e9f2;
 }
 
 .header-container {
-	width: 1110px;
-	margin: 0 auto;
+	max-width: 1110px;
+	margin: 22.5px auto;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	padding: 0px 15px;
 }
 
 .logo {
@@ -61,8 +65,102 @@ img {
 	color: #8c30f5;
 }
 
-.nav-link:last-child {
-	margin-right: 0px;
+.nav-button {
+	position: relative;
+	z-index: 9;
+	display: none;
+	background: none;
+	height: 25px;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	padding-left: 15px;
+}
+
+.nav-button-icon {
+	position: relative;
+	display: block;
+	border: none;
+	background-color: #000;
+	width: 40px;
+	height: 5px;
+}
+
+.nav-button:focus .nav-button:active {
+	outline: none;
+}
+
+.nav-button-icon::before {
+	position: absolute;
+	left: 0;
+	top: -10px;
+	content: "";
+	display: block;
+	width: 40px;
+	height: 5px;
+	background-color: #000;
+}
+
+.nav-button-icon::after {
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	content: "";
+	display: block;
+	width: 40px;
+	height: 5px;
+	background-color: #000;
+}
+
+.nav-button-close .nav-button-icon {
+	background-color: transparent;
+}
+
+.nav-button-close .nav-button-icon::before {
+	transform: rotate(45deg);
+	top: 0;
+}
+
+.nav-button-close .nav-button-icon::after {
+	transform: rotate(-45deg);
+	top: 0;
+}
+
+.mobile-nav {
+	position: fixed;
+	z-index: 8;
+	top: 0;
+	right: 0;
+
+	/* display: flex; */
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 320px;
+	height: 100%;
+	padding: 70px 70px 50px 30px;
+	background-color: rgba(10, 30, 40, 0.8);
+}
+
+.mobile-nav .nav{
+	display: block;
+}
+
+.mobile-nav .nav ul {
+	flex-direction: column;
+}
+
+.mobile-nav .nav ul li {
+	margin: 0;
+	margin-bottom: 25px;
+	list-style-type: none;
+}
+
+.mobile-nav .nav ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 18px;
 }
 
 .appstore {
@@ -78,6 +176,10 @@ img {
 	margin-left: 0px;
 }
 
+.appstore-mobile {
+	display: flex;
+}
+
 /* Main */
 
 .main {
@@ -85,7 +187,7 @@ img {
 }
 
 .main-container {
-	width: 1110px;
+	max-width: 1110px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -93,14 +195,17 @@ img {
 
 	padding-top: 197px;
 	padding-bottom: 197px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .main-content {
-	width: 540px;
+	max-width: 540px;
 }
 
-.main-img {
-	/* img */
+.main-img img {
+	width: 100%;
+    height: auto;
 }
 
 .main-title {
@@ -151,11 +256,12 @@ btn:hover {
 }
 
 .foter-container {
-	width: 1110px;
+	max-width: 1110px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0px 15px;
 }
 
 .footer-copyright {
