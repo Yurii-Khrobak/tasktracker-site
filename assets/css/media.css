@@ -4,6 +4,7 @@
 	}
 	.main-text {
 		font-size: 12px;
+
 	}
 	.nav-link {
 		font-size: 12px;
@@ -26,6 +27,15 @@
 
 	.appstore {
 		display: none;
+	}
+
+	article {
+		flex-direction:column;
+		margin-bottom: 50px;
+	}
+
+	.article_img img {
+		width: 300px;	
 	}
 }
 
